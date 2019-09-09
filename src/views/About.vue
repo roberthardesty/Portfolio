@@ -112,9 +112,18 @@
       ],
       experiences: [
         ['mdi-vuejs', '75', 'Vue'],
-        ['mdi-vuetify', '100', 'Vuetify'],
-        ['mdi-aws', '67', 'AWS'],
-        ['mdi-server-security', '95', 'Security']
+        ['mdi-vuetify', '90', 'Vuetify'],
+        ['mdi-azure', '80', 'Azure'],
+        ['mdi-microsoft', '95', 'WPF'],
+        ['mdi-linux', '85', 'Linux'],
+        ['mdi-language-typescript', '90', 'TypeScript'],
+        ['mdi-language-javascript', '80', 'JavaScript'],
+        ['C#', '95', ''],
+        ['', '85', 'Asp.net MVC'],
+        ['', '80', 'Web Sockets'],
+        ['', '70', 'WebRTC'],
+        ['', '90', 'Rest Api'],
+        ['', '85', 'Signal R']
       ]
     })
   }

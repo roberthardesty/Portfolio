@@ -9,7 +9,7 @@
           show-arrows
         >
           <v-tab
-            v-for="(category, i) in categories"
+            v-for="(category, i) in projectCategories"
             :key="i"
             @click="select(category)"
           >
@@ -39,7 +39,7 @@
                       dark
                       height="300"
                       hover
-                      @click="overlay = project.img"
+                      @click.stop="setProject(project)"
                     >
                       <v-fade-transition>
                         <v-overlay
@@ -70,103 +70,59 @@
             </transition-group>
           </v-container>
         </v-responsive>
-
-        <v-fade-transition mode="out-in">
-          <v-overlay
-            v-if="overlay"
-            fixed
-            opacity=".9"
-          >
-            <v-btn
-              color="transparent"
-              depressed
-              fab
-              fixed
-              large
-              right
-              top
-              @click="overlay = false"
-            >
-              <v-icon large>
-                mdi-close
-              </v-icon>
-            </v-btn>
-
-            <v-img
-              :src="`/static/${overlay}`"
-              width="800"
-              max-width="90vw"
-            />
-          </v-overlay>
-        </v-fade-transition>
       </v-col>
+      <v-dialog
+        v-model="dialog"
+      >
+        <v-card>
+          <v-img
+            class="white--text"
+            max-height="400"
+            :src="`/static/${overlayProject.img}`"
+          >
+            <v-overlay
+              absolute
+              opacity=".8"
+            >
+              <v-card-title class="align-end fill-height">
+                {{ overlayProject.name }}
+              </v-card-title>
+            </v-overlay>
+          </v-img>
+          <v-card-text>
+            <span class="text--white">
+              <span>Technology Buzzwords</span><br>
+              <span>Short summary of project</span>
+            </span>
+          </v-card-text>
+          <v-card-actions>
+            <v-btn
+              text
+              color="black"
+            >
+              Github
+            </v-btn>
+            <v-btn
+              text
+              color="black"
+            >
+              Visit Site
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
     </v-row>
   </v-container>
 </template>
-
 <script>
+  import { projects, projectCategories } from '../data/projectData.js'
   export default {
     data: () => ({
+      overlayProject: false,
+      dialog: false,
       category: null,
-      categories: [
-        {
-          'text': 'All Projects',
-          'filter': null
-        },
-        {
-          'text': 'Rasberry Pi',
-          'filter': 1
-        },
-        {
-          'text': 'Vue.js',
-          'filter': 2
-        },
-        {
-          'text': 'WPF',
-          'filter': 3
-        },
-        {
-          'text': 'Azure',
-          'filter': 5
-        },
-        {
-          'text': 'Computer Vision',
-          'filter': 4
-        }
-      ],
-      overlay: false,
-      projects: [
-        {
-          'name': 'Audio POCs',
-          'img': 'audio-waveform.png',
-          'categories': [1, 3]
-        },
-        {
-          'name': 'Raspberry Pi .NET Core Daemon Automatic Updater Using Azure Storage',
-          'img': 'raspberry-pi.png',
-          'categories': [1, 5]
-        },
-        {
-          'name': 'Bird Feeder Population Analysis',
-          'img': 'bird-feeder.jpg',
-          'categories': [1, 4]
-        },
-        {
-          'name': 'LBPH Facial Recognition Website',
-          'img': 'open-cv.png',
-          'categories': [1, 2, 4, 5]
-        },
-        {
-          'name': 'Home Automations',
-          'img': 'project4.png',
-          'categories': []
-        },
-        {
-          'name': 'Custom Github Release Note Generator',
-          'img': 'github-logo.png',
-          'categories': []
-        }
-      ]
+      projectCategories,
+      projects
     }),
 
     computed: {
@@ -180,6 +136,10 @@
     methods: {
       select (category) {
         this.category = category.filter
+      },
+      setProject (project) {
+        this.overlayProject = project
+        this.dialog = true
       }
     }
   }
