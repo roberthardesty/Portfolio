@@ -1,34 +1,39 @@
 {
-  "name": "@vuetify-alpha-theme/creative",
-  "version": "1.0.0",
+  "name": "kids-next-door",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "deploy": "now && now alias",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
+  "dependencies": {
+    "core-js": "^2.6.5",
+    "vue": "^2.6.10",
+    "vue-class-component": "^7.0.2",
+    "vue-property-decorator": "^8.1.0",
+    "vue-router": "^3.0.3",
+    "vuetify": "^2.0.17",
+    "vuex": "^3.0.1"
+  },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.7.0",
-    "@vue/cli-plugin-eslint": "^3.7.0",
-    "@vue/cli-service": "^3.7.0",
-    "@vue/eslint-config-standard": "^4.0.0",
-    "babel-eslint": "^8.2.6",
-    "eslint": "^5.8.0",
-    "eslint-config-vuetify": "^0.2.0",
-    "eslint-plugin-vue": "^5.1.0",
+    "@vue/cli-plugin-babel": "^3.11.0",
+    "@vue/cli-plugin-typescript": "^3.11.0",
+    "@vue/cli-service": "^3.11.0",
     "sass": "^1.17.4",
     "sass-loader": "^7.1.0",
-    "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.1",
-    "vue": "^2.6.10",
-    "vue-analytics": "^5.16.1",
+    "typescript": "^3.4.3",
     "vue-cli-plugin-vuetify": "^0.6.3",
-    "vue-meta": "^2.0.5",
-    "vue-router": "^3.0.1",
     "vue-template-compiler": "^2.6.10",
-    "vuetify": "^2.0.11",
-    "vuetify-loader": "^1.2.2",
-    "vuex": "^3.0.1"
-  }
+    "vuetify-loader": "^1.2.2"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
 }

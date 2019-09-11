@@ -115,8 +115,10 @@
   </v-container>
 </template>
 <script>
-  import { projects, projectCategories } from '../data/projectData.js'
-  export default {
+  import { projects, projectCategories } from '@/data/projectData.js'
+  import Vue from 'vue';
+
+  export default Vue.extend({
     data: () => ({
       overlayProject: false,
       dialog: false,
@@ -142,7 +144,7 @@
         this.dialog = true
       }
     }
-  }
+  })
 </script>
 
 <style scoped>

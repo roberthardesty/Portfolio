@@ -99,32 +99,34 @@
   </div>
 </template>
 
-<script>
-  export default {
-    data: () => ({
-      highlights: [
-        'Architecture development',
-        'Cloud computing',
-        'Consulting',
-        'AWS maintenance',
-        'Corporate training',
-        'Backend hardening'
-      ],
-      experiences: [
-        ['mdi-vuejs', '75', 'Vue'],
-        ['mdi-vuetify', '90', 'Vuetify'],
-        ['mdi-azure', '80', 'Azure'],
-        ['mdi-microsoft', '95', 'WPF'],
-        ['mdi-linux', '85', 'Linux'],
-        ['mdi-language-typescript', '90', 'TypeScript'],
-        ['mdi-language-javascript', '80', 'JavaScript'],
-        ['C#', '95', ''],
-        ['', '85', 'Asp.net MVC'],
-        ['', '80', 'Web Sockets'],
-        ['', '70', 'WebRTC'],
-        ['', '90', 'Rest Api'],
-        ['', '85', 'Signal R']
-      ]
-    })
-  }
+<script lang="ts">
+import Vue from 'vue';
+
+export default Vue.extend({
+  data: () => ({
+    highlights: [
+      'Architecture development',
+      'Cloud computing',
+      'Consulting',
+      'AWS maintenance',
+      'Corporate training',
+      'Backend hardening'
+    ],
+    experiences: [
+      ['mdi-vuejs', '75', 'Vue'],
+      ['mdi-vuetify', '90', 'Vuetify'],
+      ['mdi-azure', '80', 'Azure'],
+      ['mdi-microsoft', '95', 'WPF'],
+      ['mdi-linux', '85', 'Linux'],
+      ['mdi-language-typescript', '90', 'TypeScript'],
+      ['mdi-language-javascript', '80', 'JavaScript'],
+      ['C#', '95', ''],
+      ['', '85', 'Asp.net MVC'],
+      ['', '80', 'Web Sockets'],
+      ['', '70', 'WebRTC'],
+      ['', '90', 'Rest Api'],
+      ['', '85', 'Signal R']
+    ]
+  })
+});
 </script>

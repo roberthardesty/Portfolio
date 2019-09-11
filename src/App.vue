@@ -14,12 +14,17 @@
   </v-app>
 </template>
 
-<script>
-  export default {
-    components: {
-      CoreFooter: () => import('@/components/core/Footer'),
-      CoreJumbotron: () => import('@/components/core/Jumbotron'),
-      CoreToolbar: () => import('@/components/core/Toolbar')
+
+<script lang="ts">
+import Vue from 'vue';
+import HelloWorld from './components/HelloWorld.vue';
+
+export default Vue.extend({
+  name: 'App',
+  components: {
+      CoreFooter: () => import('@/components/core/Footer.vue'),
+      CoreJumbotron: () => import('@/components/core/Jumbotron.vue'),
+      CoreToolbar: () => import('@/components/core/Toolbar.vue')
     },
 
     computed: {
@@ -32,7 +37,7 @@
         }
       }
     }
-  }
+});
 </script>
 
 <style lang="sass">

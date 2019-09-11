@@ -3,17 +3,12 @@
     <services />
   </section>
 </template>
+<script lang="ts">
+import Vue from 'vue';
 
-<script>
-  export default {
-    metaInfo () {
-      return {
-        title: 'Creative'
-      }
-    },
-
+export default Vue.extend({
     components: {
       Services: () => import('@/components/Services.vue')
     }
-  }
+  });
 </script>
